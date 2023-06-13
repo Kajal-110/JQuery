@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
+    <style></style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="">
+            <button type="button" class="btn btn-primary btn-md mt-5 mb-5" data-bs-toggle="modal"
+                data-bs-target="#modalId">
+                Add Row
+            </button>
+        </div>
+        <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitleId">Add Dates</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form>
+                        <div class="modal-body">
+                            <div class="mb-3 mt-3">
+                                <label for="email" class="form-label">Date of Birth:</label>
+                                <input type="date" class="form-control" id="DOB" placeholder="Date of Birth" name="DOB">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            id="closeBtn">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveBtn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class=" table table-responsive" id="tableData">
+            <thead>
+                <tr>
+                    <!-- <th>starting Date</th> -->
+                    <th> Date of Birth</th>
+                    <th> year</th>
+                    <th>Month</th>
+                    <th>Day</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            let table = $('#tableData').DataTable();
+
+
+
+            $('#saveBtn').on('click', function () {
+
+                let dob = $('#DOB').val();
+                function findAge() {
+                    let previous = new Date(dob).getFullYear(dob);
+                    let today = new Date().getFullYear();
+                    let age = today - previous;
+                    return age;
+                }
+
+                function findMonth() {
+                    let dob = $('#DOB').val();
+                    let previous = new Date(dob).getMonth(dob);
+                    let month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    let monthName = month[previous];
+                    return monthName;
+                }
+
+                function findDay() {
+                    let dob = $('#DOB').val();
+                    let previous = new Date(dob).getDay(dob);
+
+                    let weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                    let DayName = weekday[previous];
+                    return DayName;
+                }
+
+
+                // console.log(d);
+
+                let obj = {
+                    DOB: dob,
+                    Age: findAge(),
+                    Months: findMonth(),
+                    Day:findDay()
+                }
+
+                table.row.add([obj.DOB, obj.Age, obj.Months,obj.Day]).draw();
+
+
+                $('#closeBtn').click();
+                $('form').trigger('reset');
+            });
+
+
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <label for="country">Select Country:</label>
+        <select id="country">
+            <option value="">--Please choose an option--</option>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+        </select>
+
+        <label for="state">Select State:</label>
+        <select id="state">
+            <option value="">--Please choose an option--</option>
+        </select>
+
+
+    </div>
+    <script>
+
+        // Define an object that contains arrays of states for each country
+        var countries = {
+            "USA": ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"],
+            "Canada": ["Alberta", "British Columbia", "Manitoba", "New Brunswick", "Newfoundland and Labrador", "Northwest Territories", "Nova Scotia", "Nunavut", "Ontario", "Prince Edward Island", "Quebec", "Saskatchewan", "Yukon"]
+        };
+
+        // Add an event listener to the country dropdown list
+        $("#country").on("change", function () {
+            // Get the selected country
+            var selectedCountry = $(this).val();
+
+            // Clear the state dropdown list
+            $("#state").empty();
+
+            // If the selected country is not empty, add the corresponding states to the state dropdown list
+            if (selectedCountry !== "") {
+                var states = countries[selectedCountry];
+                for (var i = 0; i < states.length; i++) {
+                    $("#state").append("<option value='" + states[i] + "'>" + states[i] + "</option>");
+                }
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>

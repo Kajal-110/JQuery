@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.6.3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div class="context">
+        <!-- <h1>Pure Css Animated Background</h1> -->
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-6 justify-content-center">
+                    <button class="btn btn-danger mt-5" id="add"> Add New Row</button>
+                </div>
+                <div class="col-sm-6 btn btn-danger mt-5 ">
+                    Your Timeout in :
+                    <span id="countdown"></span>
+                    Sec
+                    
+                </div>
+
+            </div>
+            <table class="table mt-5 table-responsive" id="myTable">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>name</th>
+                        <th>subject</th>
+                        <th>mark</th>
+                        <th>action</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody class="firstTableBody" id="firstTableBody">
+                    <tr>
+                        <td  data-label="S.No :" class="sno"></td>
+                    <td  data-label="Name:"><input value="Kajal" class="name"  name="name"   ></td>
+                    <td  data-label="Subject :"><input class="subject" value="Sanskrit"  name="subject"></td>
+                    <td data-label="Marks"><input type="text" value="86" class="marks"   name="marks" ></td>
+                   
+                    <td data-label="Result"> <button  id="button" class="btn btn-dark " type="button" >Accept</button>
+                      <button  class="btn btn-primary  " >Reject</button></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                        <td  data-label="S.No :" class="sno"></td>
+                    <td data-label="Name:"><input value="Simran" class="name" name="name"  ></td>
+                    <td data-label="Subject :"><input class="subject" value="Chemistry" name="subject"></td>
+                    <td data-label="Marks"><input type="text" value="88" class="marks"  name="marks" ></td>
+                   
+                    <td data-label="Result"> <button  class="btn btn-dark " type="submit" >Accept</button>
+                      <button type="button" class="btn btn-primary" >Reject</button></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                        <td  data-label="S.No :" class="sno"></td>
+                        <td data-label="Name:"><input value="Pooja"  class="name" name="name"  ></td>
+                        <td data-label="Subject :"><input class="subject" value="Physics" name="subject"></td>
+                        <td data-label="Marks"><input type="text" value="68" class="marks"  name="marks" ></td>
+                       
+                        <td data-label="Result"> <button class="btn btn-dark " type="button"  >Accept</button>
+                          <button type="button" class="btn btn-primary " >Reject</button></td>
+                          <td></td>
+                    </tr>
+                    <tr>
+                        <td   data-label="S.No :" class="sno"></td>
+                        <td data-label="Name:" ><input value="Simran" class="name" name="name"  ></td>
+                        <td data-label="Subject :"><input class="subject" value="maths" name="subject" ></td>
+                        <td data-label="Marks"><input type="text" value="45" class="marks"  name="marks"></td>
+                       
+                        <td><button  class="btn btn-dark " type="button" >Accept</button>
+                          <button type="button" class="btn btn-primary " >Reject</button></td>
+                          <td></td>
+                    </tr>
+                    <tr>
+                        <td   data-label="S.No :" class="sno"></td>
+                        <td data-label="Name:"><input value="Honey" class="name" name="name"  ></td>
+                        <td data-label="Subject :"><input class="subject" value="Hindi" name="subject" ></td>
+                        <td data-label="Marks"><input type="text" value="30" class="marks"  name="marks"></td>
+                       
+                        <td data-label="Result"> <button   class="btn btn-dark" type="button" >Accept</button>
+                          <button type="button" class="btn btn-primary" >Reject</button></td>
+                          <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-dark mt-3 " id="saveDataIntable" >Save
+                Data</button></td>
+
+            <table class=" table saveDatatable">
+                <thead class="secondTable" id="secondTable">
+                    <tr>
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>Subject</th>
+                        <th>Mark</th>
+                    </tr>
+                </thead>
+                <tbody class="secondTableBody" id="secondTableBody mt-5">
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+  
+
+    <script src="script.js"></script>
+</body>
+
+</html>

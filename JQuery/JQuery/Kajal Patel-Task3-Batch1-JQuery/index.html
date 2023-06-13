@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+     <link rel="stylesheet" href="style.css">
+     <script type="text/javascript" src="jquery-3.6.3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <div class="container mt-5 ">
+        <div class=" table-responsive ">
+            <div class=" col-sm-6 button ">
+                <button class="btn-hover color-1" id="addButton">Add New Row</button>
+            </div>
+           <!-- <form  name="myForm" id="form">
+           -->
+            <table class="table table-striped section mt-3 "  id="myTable" >
+                <thead class="">
+                  <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Mark</th>
+                    <th>Result</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody class="firstTableBody" id="firstTableBody">
+                  <tr>
+                  
+                    <td  data-label="S.No :" class="sno"></td>
+                    <td  data-label="Name:"><input value="Kajal" class="name"  name="name" id="name"  >
+                    
+                    </td>
+                    <td  data-label="Subject :"><input class="subject" value="Physics" id="subject"  name="subject"></td>
+                    <td data-label="Marks"><input type="text" value="86" class="marks" min="1" max="100"  name="marks" ></td>
+                   
+                    <td data-label="Result"> <button  id="button" class="btn btn-dark " type="button" >Accept</button>
+                      <button  class="btn btn-primary  "  >Reject</button></td>
+                    <td></td>
+                    </tr>
+                  <tr>
+                    <td  data-label="S.No :" class="sno"></td>
+                    <td data-label="Name:"><input value="Simran" class="name" name="name" id="name"  ></td>
+                    <td data-label="Subject :"><input class="subject" value="Chemistry" id="subject" name="subject"></td>
+                    <td data-label="Marks"><input type="text" value="88" class="marks" min="1" max="100" name="marks" ></td>
+                   
+                    <td data-label="Result"> <button  class="btn btn-dark " type="submit"  >Accept</button>
+                      <button type="button" class="btn btn-primary"  >Reject</button></td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                    <td  data-label="S.No :" class="sno"></td>
+                    <td data-label="Name:"><input value="Pooja"  class="name" name="name" id="name" ></td>
+                    <td data-label="Subject :"><input class="subject" value="Physics" id="subject" name="subject"></td>
+                    <td data-label="Marks"><input type="text" value="68" class="marks" min="1" max="100" name="marks" ></td>
+                   
+                    <td data-label="Result"> <button class="btn btn-dark " type="button" >Accept</button>
+                      <button type="button" class="btn btn-primary "  >Reject</button></td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                    <td   data-label="S.No :" class="sno"></td>
+                    <td data-label="Name:" ><input value="Simran" class="name" name="name" id="name" ></td>
+                    <td data-label="Subject :"><input class="subject" value="maths" id="subject" name="subject" ></td>
+                    <td data-label="Marks"><input type="text" value="45" class="marks" min="1" max="100" name="marks"></td>
+                   
+                    <td><button  class="btn btn-dark " type="button">Accept</button>
+                      <button type="button" class="btn btn-primary ">Reject</button></td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                    <td   data-label="S.No :" class="sno"></td>
+                    <td data-label="Name:"><input value="Kajal" class="name" name="name" id="name" ></td>
+                    <td data-label="Subject :"><input class="subject" value="Hindi" id="subject" name="subject" ></td>
+                    <td data-label="Marks"><input type="text" value="30" class="marks" min="1" max="100" name="marks"></td>
+                   
+                    <td data-label="Result"> <button   class="btn btn-dark" type="button"   >Accept</button>
+                      <button type='button' class="btn btn-primary"  >Reject</button></td>
+                      <td></td>
+                  </tr>
+                </tbody>
+               
+              </table>
+              <button type="submit" class="btn btn-dark mt-3 " id="saveDataIntable" >Save
+                Data</button></td>
+            <!-- </form> -->
+            <table class=" table" id="saveDatatable">
+                <thead class="secondTable" id="secondTable">
+                    <tr>
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>Subject</th>
+                        <th>Mark</th>
+                    </tr>
+                </thead>
+                <tbody class="secondTableBody mt-5" id="secondTableBody ">
+
+                </tbody>
+            </table>
+        </div>
+        <div class=" col-sm-12 mt-5  d-flex row ">
+            <!-- <div class="col-sm-6  justify-content-center mt-3 ">
+              <input  class=" Search" style="border-radius: 12px; " type="text" id="myInput"  placeholder="Search for Names and Subject..">
+            </div> -->
+            <!-- <div class="col-sm-6  justify-content-center text-center mt-3 btn-info">
+               <button class="btn btn-info" style="border-radius: 12px; height: 40px; width: 100%; " > Click on Name and Subject to Sort Data</button> 
+            </div> -->
+        </div>
+
+          <div class=" d-flex justify-content-center mt-5 table-responsive">
+            <table class="table table-striped " id="demoList">
+             
+            </table>   
+          </div> 
+          <!-- <div class=" d-flex justify-content-center mt-5 table-responsive">
+            <table class="table table-striped " id="percentages">
+             
+            </table>   
+          </div> 
+          <div class=" d-flex justify-content-center mt-5 table-responsive">
+            <table class="table table-striped " id="acceptedRows">
+             
+            </table>   
+          </div>  -->
+        </div>
+    </div>   
+         
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

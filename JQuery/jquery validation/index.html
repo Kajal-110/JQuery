@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="jquery-3.6.3.js"></script>
+    <style>
+        input {
+            width: 50%;
+            margin-top: 20px;
+            margin-left: 25%;
+        }
+
+        button {
+            margin-left: 25%;
+        }
+
+        .error {
+            color: red;
+        }
+
+        #GFG {
+            width: 300px;
+            padding: 50px;
+            height: 250px;
+            border: 2px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+
+
+
+        <form action="#" id="myForm " >
+            Name: <input type="text" style="margin: 10px;" name="Name" id="name">
+            <br>
+            Subject: <input type="text" style="margin: 10px;" name="Subject" id="subject">
+            <br>
+            Mark: <input type="text" style="margin: 10px;" name="Mark" id="mark">
+            <br>
+        </form>
+        <button type="submit" onclick="savedata()" >save data</button>
+
+        <div id="output"></div>
+    </div>
+    <script>
+        // $(document).ready(function () {
+        function savedata() {
+            validateForm();
+            var x = $("form").serializeArray();
+            $.each(x, function (i, field) {
+                $("#output").append(field.name + ":"
+                    + field.value + "<br> ");
+            });
+        }
+
+        function validateForm() {
+            isFormValid = true;
+            if (!$('#name').val() == " " || !$('#subject').val() == " " || !$("#mark").val() == " ") {
+                alert('please enter value');
+               
+                isFormValid = false;
+            }
+
+            // if (isFormValid) {
+            //     savedata();
+            // }
+            isFormValid = true;
+
+        }
+        //})
+    </script>
+</body>
+
+</html>

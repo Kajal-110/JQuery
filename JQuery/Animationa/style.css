@@ -1,0 +1,8 @@
+
+table{
+    counter-reset: rowCount;
+}
+.sno:before{
+    counter-increment: rowCount;
+    content: counter(rowCount);
+}
